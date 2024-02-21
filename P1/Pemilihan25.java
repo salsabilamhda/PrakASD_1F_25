@@ -20,18 +20,15 @@ public class Pemilihan25 {
         int NilaiUas= sc.nextInt();
         System.out.println("==============================");
         System.out.println("==============================");
-        String nilaiHuruf="";
-    
-        if(NilaiTugas > 100 || NilaiTugas < 0 ||
-           NilaiKuis > 100 || NilaiKuis < 0 ||
-           NilaiUts > 100 || NilaiUts < 0 ||
-           NilaiUas > 100 || NilaiUas < 0) {
+        
+        if(NilaiTugas > 100 || NilaiTugas < 0 || NilaiKuis > 100 || NilaiKuis < 0 || NilaiUts > 100 || NilaiUts < 0 || NilaiUas > 100 || NilaiUas < 0) {
             System.out.println("Nilai tidak valid!");
             System.out.println("==============================");
             System.out.println("==============================");
         } else { 
             double nilaiAkhir = (NilaiTugas * 0.20) + (NilaiKuis * 0.20) + (NilaiUts * 0.30) + (NilaiUas * 0.30);
             String kelulusan = "SELAMAT ANDA LULUS";
+            String nilaiHuruf="";
             if (80< nilaiAkhir && nilaiAkhir<=100) {
                 nilaiHuruf = "A";
             } else if (73 < nilaiAkhir && nilaiAkhir <= 80) {
