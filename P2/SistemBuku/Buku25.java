@@ -25,7 +25,11 @@ public class Buku25 {
     }
 
     void terjual(int jml) {
-        stok -= jml;
+        if (stok > 0) {   //modifikasi
+            stok -= jml;
+        } 
+        
+       // stok -= jml; (kode lama)
     }
 
     void restock(int jml) {
