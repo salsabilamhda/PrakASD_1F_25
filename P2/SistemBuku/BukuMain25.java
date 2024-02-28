@@ -22,5 +22,6 @@ public class BukuMain25 {
        bk2.harga = 275000;
 
        bk2.tampilInformasi();
+       bk2.terjual(4); //modifikasi
     }
 }
