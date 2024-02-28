@@ -18,6 +18,8 @@ public class BukuMain25 {
         bk2.terjual(11);
         bk2.tampilInformasi();
 
+        Buku25 bukuSalsabila = new Buku25("Dilan 1990", "Pidi Baiq", 199, 3, 89000); //pertanyaan 5
+
       // Buku25 bk2 = new Buku25(); //modifikasi
       // bk2.judul = "How to Train Your Dragon";
       // bk2.pengarang = "Cressida Cowell";
