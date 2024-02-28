@@ -27,7 +27,9 @@ public class Buku25 {
     void terjual(int jml) {
         if (stok > 0) {   //modifikasi
             stok -= jml;
-        } 
+        } else {
+            System.out.println("Maaf stok buku telah habis terjual");
+        }
         
        // stok -= jml; (kode lama)
     }
