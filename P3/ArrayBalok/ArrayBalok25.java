@@ -20,5 +20,11 @@ public class ArrayBalok25 {
         sgArray[2] = new Segitiga25(15, 6);
         sgArray[3] = new Segitiga25(25, 10);
 
+        for(int i = 0; i < 4;  i++)
+        {
+            System.out.println("Luas Segitiga " + i + ": " + sgArray[i].hitungLuas());
+            System.out.println("Keliling Segitiga " + i + ": " + sgArray[i].hitungKeliling());
+        }
+
     }
 }
