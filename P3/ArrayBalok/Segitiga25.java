@@ -10,4 +10,12 @@ public class Segitiga25 {
         tinggi = t;
     }
 
+    public int hitungLuas() {
+        return alas*tinggi/2;
+    }
+
+    public double hitungKeliling() {
+        return alas + tinggi + (Math.sqrt(Math.pow(alas, 2) + Math.pow(tinggi, 2)));
+    }
+
 }
