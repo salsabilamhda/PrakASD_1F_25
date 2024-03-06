@@ -14,8 +14,9 @@ public class Segitiga25 {
         return alas*tinggi/2;
     }
 
-    public double hitungKeliling() {
-        return alas + tinggi + (Math.sqrt(Math.pow(alas, 2) + Math.pow(tinggi, 2)));
+    public int hitungKeliling() {
+        return alas + tinggi + (int) Math.sqrt(alas * alas + tinggi * tinggi);
     }
 
 }
+ 
