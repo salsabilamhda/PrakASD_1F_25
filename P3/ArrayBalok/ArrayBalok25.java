@@ -13,5 +13,12 @@ public class ArrayBalok25 {
             System.out.println("Volume balok ke " + i + ": " + blArray[i].hitungVolume());
         }
 
+        Segitiga25[] sgArray = new Segitiga25[4];
+
+        sgArray[0] = new Segitiga25(10, 4);
+        sgArray[1] = new Segitiga25(20, 10);
+        sgArray[2] = new Segitiga25(15, 6);
+        sgArray[3] = new Segitiga25(25, 10);
+
     }
 }
