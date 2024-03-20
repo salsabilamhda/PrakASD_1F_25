@@ -4,13 +4,15 @@ public class Sum25 {
     int elemen;
     double keuntungan[], total;
 
-    Sum25(int elemen){
-        this.elemen = elemen;
-        this.keuntungan = new double[elemen];
-        this.total = 0;
-    }
-    double totalBF(double arr[]){
-        for(int i=0; i<elemen; i++){
+   // Sum25(int elemen){
+       // this.elemen = elemen;
+       // this.keuntungan = new double[elemen];
+       // this.total = 0;
+   // }
+
+     public double totalBF(double arr[]){
+        double total = 0;
+        for(int i=0; i<arr.length; i++){
             total = total + arr[i];
         }
         return total;
