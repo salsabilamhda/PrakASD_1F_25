@@ -30,7 +30,8 @@ public class MainBuku25 {
     listBuku.tampil();
 
     System.out.println("**********************");
-    System.out.println("Data setelah diurutkan secara Asc berdasarkan stock Menggunakan insertion sort");
+    //System.out.println("Data setelah diurutkan secara Asc berdasarkan stock Menggunakan insertion sort");
+    System.out.println("Data setelah diurutkan secara Desc berdasarkan stock Menggunakan insertion sort"); //modified
     listBuku.insertionSort();
     listBuku.tampil();
     
