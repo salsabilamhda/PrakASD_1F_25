@@ -33,4 +33,19 @@ public class DaftarBuku25 {
             }
         }
     }
+
+    void selectionSort(){
+        for(int i =0; i<listBk.length-1; i++){
+            int idMax = i;
+            for(int j=i+1; j<listBk.length; j++){
+                if(listBk[j].stock > listBk[idMax].stock){
+                    idMax = j;
+                }
+            }
+            //swap 
+            Buku25 tempBuku25 = listBk[i];
+            listBk[i] = listBk[idMax];
+            listBk[idMax] = tempBuku25;
+        }
+    }
 }

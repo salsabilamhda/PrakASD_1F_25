@@ -23,6 +23,12 @@ public class MainBuku25 {
     System.out.println("Data setelah diurutkan secara Asc berdasarkan stock");
     listBuku.bubbleSort();
     listBuku.tampil();
+    
+    System.out.println("**********************");
+    System.out.println("Data setelah diurutkan secara Desc berdasarkan stock Menggunakan selection sort");
+    listBuku.selectionSort();
+    listBuku.tampil();
+    
 
     }
 }
