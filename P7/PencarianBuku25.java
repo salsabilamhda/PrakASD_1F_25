@@ -52,7 +52,7 @@ public class PencarianBuku25 {
     }
 
     //modifikasi
-   public Buku25 FindBuku(int cari){
+    public Buku25 FindBuku(int cari){
         Buku25 dataBuku25 = null;
         for (int j = 0; j<listBk.length; j++){
             if(listBk[j].kodeBuku == cari){
@@ -62,5 +62,21 @@ public class PencarianBuku25 {
         }
         return dataBuku25;
        
+   }
+
+   //Binary
+    public int FindBinarySearch(int cari, int left, int right){
+        int mid;
+        if (right >= left){
+            mid = (left + right)/2;
+            if(cari == listBk[mid].kodeBuku){
+                return(mid);
+            }else if (listBk[mid].kodeBuku > cari){
+                return FindBinarySearch(cari, left, mid-1);
+            }else {
+                return FindBinarySearch(cari, mid+1, right);
+            }
+        }
+        return -1;
    }
 }

@@ -45,8 +45,15 @@ public class BukuMain25 {
         data.TampilData(cari, posisi);
 
         //modifikasi
-        Buku25 dataBuku25 = data.FindBuku(cari);
-        dataBuku25.tampilDataBuku();
+        //Buku25 dataBuku25 = data.FindBuku(cari);
+        //dataBuku25.tampilDataBuku();
+
+        //Binary
+        System.out.println("==============================");
+        System.out.println("menggunakan binary Search");
+        posisi = data.FindBinarySearch(cari, 0, jumBuku -1);
+        data.Tampilposisi(cari, posisi);
+        data.TampilData(cari, posisi);
     }
 
     
