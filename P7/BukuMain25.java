@@ -31,36 +31,88 @@ public class BukuMain25 {
             data.tambah(m);
         }
 
-        System.out.println("--------------------------------------------------");
-        System.out.println("Data keseluruhan Buku : ");
+        System.out.println("===============================");
+        System.out.println("Data keseluruhan Buku: ");
         data.tampil();
 
+        System.out.println("Metode Pencarian Buku: ");
+        System.out.println("1. Cari dengan Kode Buku");
+        System.out.println("2. Cari dengan Judul Buku");
+        System.out.print("Masukkan pilihan Anda: ");
+        int choice = s.nextInt();
 
-        System.out.println("---------------------------------------------------");
-        System.out.println("---------------------------------------------------");
-        System.out.println("Pencarian Data : ");
-        System.out.println("Masukkan Kode Buku yang dicari: ");
-        System.out.print("Kode Buku \t : ");
-        String cari = s.nextLine();
-       // int posisi = data.FindKodeSeqSearch(null);
-       // data.Tampilposisi(null, posisi);
-       // data.TampilData(null, posisi);
+        switch (choice) {
+            case 1 :
+                System.out.println("===============================");
+                System.out.println("Pencarian Data:");
+                System.out.print("Masukkan Kode Buku yang dicari: ");
+                String cari = s1.nextLine();
+                int posisi = data.FindKodeSeqSearch(cari);
+            
+                System.out.println("===============================");
+                System.out.println("Menggunakan Sequential Search Method FindBuku");
+            
+                if (posisi != -1) {
+                    Buku25 dataBuku = data.FindBuku(cari);
+                    if (dataBuku != null) {
+                        dataBuku.tampilDataBuku();
+                    } else {
+                        System.out.println("Data tidak ditemukan");
+                    }
+                } else {
+                    System.out.println("Data tidak ditemukan");
+                }
+            
+                System.out.println();
+                System.out.println("===============================");
+                System.out.println("Menggunakan Binary Search");
+                String result = data.FindKodeBinarySearch(cari, 0, jumBuku - 1);
+                if (result != null) {
+                    int binarySearchPos = data.FindKodeSeqSearch(result); // Cari posisi menggunakan Sequential Search
+                    data.TampilData(result, binarySearchPos);
+                } else {
+                    System.out.println("Data tidak ditemukan");
+                }
+                break;
+            
+            case 2:
+                System.out.println();
+                System.out.println("===============================");
+                System.out.println("Pencarian Data  :");
+                System.out.println("Masukkan Judul Buku yang dicari: ");
+                System.out.print("Judul Buku   : ");
+                cari = s1.nextLine();
+                System.out.println("===============================");
+                System.out.println("Menggunakan Sequential Search Method FindBuku");
+                Buku25[] foundBooks = data.FindJudulBuku(cari);
+                if (foundBooks != null) {
+                    for (Buku25 buku : foundBooks) {
+                        buku.tampilDataBuku();
+                    }
 
-        //LATIHAN
-        System.out.println("==============================");
-        System.out.println("menggunakan Sequential Search");
-        System.out.println("==============================");
-        int posisi = data.FindKodeSeqSearch(cari); 
-        data.Tampilposisi(cari, posisi); 
-        data.TampilData(cari, posisi); 
+                    if (foundBooks.length > 1) {
+                        System.out.println("Ditemukan lebih dari 1 data buku dengan judul " + cari);
+                    }
 
-        System.out.println("==============================");
-        System.out.println("menggunakan Binary Search");
-        System.out.println("==============================");
-        String kodeBukuDitemukan = data.FindKodeBinarySearch(cari, 0, jumBuku - 1);
-        data.Tampilposisi(cari, posisi);
-        data.TampilData(cari, posisi);
+                } else {
+                    System.out.println("Data tidak ditemukan");
+                }
 
+                System.out.println();
+                System.out.println("===============================");
+                System.out.println("Menggunakan Binary Search");
+                data.findAllJudulBukuBinarySearch(cari, 0, jumBuku - 1);
+                break;
+
+
+            default:
+                System.out.println("Mohon Maaf, pilihan Anda tidak tersedia.");
+                break;
+        }
+        
+        
+    }   
+    
         //modifikasi
         //Buku25 dataBuku25 = data.FindBuku(cari);
         //dataBuku25.tampilDataBuku();
@@ -74,4 +126,4 @@ public class BukuMain25 {
     }
 
     
-}
+

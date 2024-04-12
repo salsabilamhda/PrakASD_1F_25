@@ -93,7 +93,99 @@ public class PencarianBuku25 {
             System.out.println("data " + x + "tidak ditemukan");
         }
     }
-    
+
+    public Buku25[] FindJudulBuku(String cari) {
+        Buku25[] foundBooks = new Buku25[listBk.length];
+        int count = 0;
+
+        for (int j = 0; j < listBk.length; j++) {
+            if (listBk[j] != null && listBk[j].judulBuku.equals(cari)) {
+                foundBooks[count] = listBk[j];
+                count++;
+            }
+        }
+
+        if (count > 0) {
+            Buku25[] result = new Buku25[count];
+            System.arraycopy(foundBooks, 0, result, 0, count);
+            return result;
+        } else {
+            return null;
+        }
+    }
+
+    public void findAllJudulBukuBinarySearch(String cari, int left, int right) {
+        int firstIndex = -1;
+        int lastIndex = -1;
+
+        for(int i=0; i<listBk.length-1; i++){
+            for(int j=1; j <listBk.length -i; j++){
+                if(listBk[j] != null && listBk[j - 1] != null && listBk[j].judulBuku.compareTo(listBk[j - 1].judulBuku) < 0){
+                    Buku25 tmp = listBk[j];
+                    listBk[j] = listBk[j-1];
+                    listBk[j-1] = tmp;
+                }
+            }
+        }
+
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
+            if (listBk[mid] != null) {
+                if (listBk[mid].judulBuku.compareTo(cari) == 0) {
+                    firstIndex = mid;
+                    lastIndex = mid;
+                    // Temukan indeks pertama
+                    while (firstIndex > left && listBk[firstIndex - 1] != null && listBk[firstIndex - 1].judulBuku.compareTo(cari) == 0) {
+                        firstIndex--;
+                    }
+                    // Temukan indeks terakhir
+                    while (lastIndex < right && listBk[lastIndex + 1] != null && listBk[lastIndex + 1].judulBuku.compareTo(cari) == 0) {
+                        lastIndex++;
+                    }
+                    break;
+                } else if (listBk[mid].judulBuku.compareTo(cari) < 0) {
+                    left = mid + 1;
+                } else {
+                    right = mid - 1;
+                }
+            }
+        }
+
+        if (firstIndex != -1 && lastIndex != -1) {
+            boolean multipleBooksFound = firstIndex != lastIndex;
+            for (int i = firstIndex; i <= lastIndex; i++) {
+                if (listBk[i] != null && listBk[i].judulBuku.equals(cari)) {
+                    System.out.println("Kode Buku       : " + listBk[i].kodeBuku);
+                    System.out.println("Judul           : " + listBk[i].judulBuku);
+                    System.out.println("Tahun Terbit    : " + listBk[i].tahunTerbit);
+                    System.out.println("Pengarang       : " + listBk[i].pengarang);
+                    System.out.println("Stock           : " + listBk[i].stock);
+                    System.out.println("===============================");
+                }
+            }
+
+            if (multipleBooksFound) {
+                System.out.println("Ditemukan lebih dari 1 data buku dengan judul " + cari);
+            }
+
+        } else {
+            System.out.println("Data tidak ditemukan");
+        }
+    }
+
+     //modifikasi
+     public Buku25 FindBuku(String cari){
+        for (int j = 0; j < idx; j++){
+            if (listBk[j] != null && listBk[j].kodeBuku.equals(cari)){
+                return listBk[j];
+                }
+            }
+            return null;
+           
+            }
+        }
+
+
 
    /// public int FindSeqSearch(String cari){
        // int posisi = -1;
@@ -107,20 +199,7 @@ public class PencarianBuku25 {
    // }
     
 
-    //modifikasi
-   // public Buku25 FindBuku(String cari){
-        //Buku25 dataBuku25 = null;
-        //for (int j = 0; j<listBk.length; j++){
-            //if(listBk[j].kodeBuku == cari){ >> kode lama
-            //if(listBk[j] != null && listBk[j].kodeBuku.equals(cari)){ //modifikasi latihan 1
-               // dataBuku25 = listBk[j];
-               // break;
-           // }
-       // }
-       // return dataBuku25;
-       
-  // }
-
+    
    //public int FindSeqSearch(String cari){
     //int posisi = -1;
     //for(int j = 0; j<listBk.length; j++){
@@ -148,7 +227,9 @@ public class PencarianBuku25 {
        // }
         //return -1;
   // }
-    }
+            
+            
+        
 
 
 
