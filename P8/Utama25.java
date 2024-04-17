@@ -4,8 +4,11 @@ import java.util.Scanner;
 
 public class Utama25 {
     public static void main(String[] args) {
-        Gudang25 gudang = new Gudang25(7);
         Scanner scanner = new Scanner(System.in);
+        System.out.print("Tentukan Kapasitas Gudang: "); //modifikasi pertanyaan 4
+        int kapasitas = scanner.nextInt();
+        Gudang25 gudang = new Gudang25(kapasitas);
+        System.out.print("Kapasitas gudang saat ini adalah: " + kapasitas);
         boolean konfirmasi = true; //kode baru
 
         //while(true){ kode lama
@@ -14,7 +17,8 @@ public class Utama25 {
             System.out.println("1. Tambah barang");
             System.out.println("2. Ambil barang");
             System.out.println("3. Tampilkan tumpukan barang");
-            System.out.println("4. Keluar");
+            System.out.println("4. Lihat Barang Teratas"); //modifikasi pertanyaan 4
+            System.out.println("5. Keluar");
             System.out.print("Pilih operasi: ");
             int pilihan = scanner.nextInt();
             scanner.nextLine();
@@ -38,6 +42,9 @@ public class Utama25 {
                     gudang.tampilkanBarang();
                     break;
                 case 4:
+                    gudang.lihatBarangTeratas(); //modifikasi pertanyaann 4
+                    break;
+                case 5:
                     konfirmasi = false; //kode baru
                     break;
                 default:
