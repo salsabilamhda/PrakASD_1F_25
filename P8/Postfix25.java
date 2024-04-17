@@ -44,15 +44,15 @@ public class Postfix25 {
     public int derajat(char c){
         switch (c){
             case '^':
-                return 3;
+                return 6;
             case '%':
-                return 2;
+                return 5;
             case '/':
-                return 2;
+                return 4;
             case '*':
-                return 2;
+                return 3;
             case '-':
-                return 1;
+                return 2;
             case '+':
                 return 1;
             default:
