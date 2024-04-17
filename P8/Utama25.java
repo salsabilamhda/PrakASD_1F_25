@@ -19,7 +19,8 @@ public class Utama25 {
             System.out.println("3. Tampilkan tumpukan barang");
             System.out.println("4. Lihat Barang Teratas"); //modifikasi pertanyaan 4
             System.out.println("5. Lihat Barang Terbawah"); //Latihan Praktikum 1
-            System.out.println("6. Keluar");
+            System.out.println("6. Cari Barang"); //Latihan Praktikum 2
+            System.out.println("7. Keluar");
             System.out.print("Pilih operasi: ");
             int pilihan = scanner.nextInt();
             scanner.nextLine();
@@ -48,7 +49,41 @@ public class Utama25 {
                 case 5:
                     gudang.lihatBarangTerbawah(); //Latihan Praktikum 1
                     break;
-                case 6:
+                case 6: //Latihan Praktikum 2
+                    System.out.println("Cari Barang Berdasarkan: ");
+                    System.out.println("1. Kode Barang");
+                    System.out.println("2. Nama barang");
+                    System.out.print("Masukkan Pilihan Anda: ");
+                    int choice = scanner.nextInt();
+                    switch(choice){
+                        case 1: 
+                            System.out.println("=============================");
+                            System.out.println("Pencarian berdasarkan Kode Barang");
+                            System.out.print("Masukkan kode barang: ");
+                            int cari = scanner.nextInt();
+                            int posisi = gudang.CariBarangKode(cari);
+                            gudang.TampilPosisiKode(cari, posisi);
+                            gudang.TampilDataKode(cari, posisi);
+                            break;
+                        case 2:
+                            System.out.println("=============================");
+                            System.out.println("Pencarian berdasarkan Nama Barang");
+                            scanner.nextLine();
+                            System.out.print("Masukkan nama barang: ");
+                            String cari2 = scanner.nextLine(); 
+                            posisi = gudang.CariBarangNama(cari2);
+                            if (posisi != -1) {
+                                gudang.TampilPosisiNama(cari2, posisi);
+                                gudang.TampilDataNama(cari2, posisi);
+                            } else {
+                                System.out.println("Data " + cari2 + " tidak ditemukan");
+                            }
+                            break;
+                        default:
+                            System.out.println("Pilihan yang kamu masukkan tidak valid.");
+                            break;
+                        }
+                case 7:
                     konfirmasi = false; //kode baru
                     break;
                 default:
@@ -57,3 +92,4 @@ public class Utama25 {
         }
     }
 }
+

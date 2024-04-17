@@ -103,4 +103,65 @@ public class Gudang25 {
             return null;
         }
     }
+
+    //Latihan Praktikum 2
+    public int CariBarangKode(int cari){
+        int posisi = -1;
+        for(int j = 0; j<tumpukan.length; j++){
+            if(tumpukan[j].kode == cari){
+                posisi = j;
+                break;
+                
+            }
+        }
+        return posisi;
+    }
+
+    public void TampilDataKode(int x, int pos){
+        if (pos != -1){
+            System.out.println("Kode Barang       : " + tumpukan[pos].kode);
+            System.out.println("Nama Barang       : " + tumpukan[pos].nama);
+            System.out.println("Kategori Barang   : " + tumpukan[pos].kategori);
+        } else {
+            System.out.println("Data " + x + " tidak ditemukan");
+        }
+    }
+
+    public void TampilPosisiKode(int x, int pos){
+        if(pos!= -1){
+            System.out.println("Data: " + x + " ditemukan pada indeks " + pos);
+        } else {
+            System.out.println("Data " + x + " tidak ditemukan ");
+        }
+    }
+
+    public int CariBarangNama(String cari2){
+        int posisi = -1;
+        for(int j = 0; j<tumpukan.length; j++){
+            if (tumpukan[j] != null && tumpukan[j].nama.equalsIgnoreCase(cari2)){
+                posisi = j;
+                break;
+            }
+        }
+        return posisi;
+    }
+
+    public void TampilDataNama(String x, int pos){
+        if (pos != -1){
+            System.out.println("Kode Barang       : " + tumpukan[pos].kode);
+            System.out.println("Nama Barang       : " + tumpukan[pos].nama);
+            System.out.println("Kategori Barang   : " + tumpukan[pos].kategori);
+        } else {
+            System.out.println("Data " + x + " tidak ditemukan");
+        }
+    }
+
+    public void TampilPosisiNama(String x, int pos){
+        if(pos!= -1){
+            System.out.println("Data: " + x + " ditemukan pada indeks " + pos);
+        } else {
+            System.out.println("Data " + x + " tidak ditemukan ");
+        }
+    }
+    
 }
