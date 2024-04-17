@@ -51,7 +51,8 @@ public class Gudang25 {
     }
 
     public Barang25 lihatBarangTeratas(){
-        if(!cekKosong()){
+       // if(!isEmpty()) { kode lama
+        if(!cekKosong()){ //kode baru 
             Barang25 barangTeratas = tumpukan[top];
             System.out.println("Barang teratas: " + barangTeratas.nama);
             return barangTeratas;
@@ -65,7 +66,8 @@ public class Gudang25 {
         if(!cekKosong()){
             System.out.println("Rincian tumpukan barang di Gudang");
 
-            for(int i = 0; i<=top; i++){
+            //for(int i = 0; i<=top; i++){ kode  lama
+            for(int i = top; i >= 0; i--){ // kode baru 
                 System.out.printf("Kode%d: %s (Kategori %s)\n", tumpukan[i].kode, tumpukan[i].nama, tumpukan[i].kategori);
             }
         }else {

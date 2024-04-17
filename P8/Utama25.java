@@ -4,12 +4,12 @@ import java.util.Scanner;
 
 public class Utama25 {
     public static void main(String[] args) {
-        
         Gudang25 gudang = new Gudang25(7);
-
         Scanner scanner = new Scanner(System.in);
+        boolean konfirmasi = true; //kode baru
 
-        while(true){
+        //while(true){ kode lama
+        while(konfirmasi){ //kode baru
             System.out.println("\nMenu");
             System.out.println("1. Tambah barang");
             System.out.println("2. Ambil barang");
@@ -38,6 +38,7 @@ public class Utama25 {
                     gudang.tampilkanBarang();
                     break;
                 case 4:
+                    konfirmasi = false; //kode baru
                     break;
                 default:
                     System.out.println("Pilihan tidak valid. Silakan coba lagi");
