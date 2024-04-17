@@ -18,7 +18,8 @@ public class Utama25 {
             System.out.println("2. Ambil barang");
             System.out.println("3. Tampilkan tumpukan barang");
             System.out.println("4. Lihat Barang Teratas"); //modifikasi pertanyaan 4
-            System.out.println("5. Keluar");
+            System.out.println("5. Lihat Barang Terbawah"); //Latihan Praktikum 1
+            System.out.println("6. Keluar");
             System.out.print("Pilih operasi: ");
             int pilihan = scanner.nextInt();
             scanner.nextLine();
@@ -45,6 +46,9 @@ public class Utama25 {
                     gudang.lihatBarangTeratas(); //modifikasi pertanyaann 4
                     break;
                 case 5:
+                    gudang.lihatBarangTerbawah(); //Latihan Praktikum 1
+                    break;
+                case 6:
                     konfirmasi = false; //kode baru
                     break;
                 default:

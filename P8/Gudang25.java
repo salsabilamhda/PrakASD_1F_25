@@ -91,4 +91,16 @@ public class Gudang25 {
         }
         return biner;
     }
+
+    //Latihan Praktikum
+    public Barang25 lihatBarangTerbawah(){
+        if(!cekKosong()){
+            Barang25 barangTerbawah = tumpukan[0];
+            System.out.println("Barang terbawah: " + barangTerbawah.nama);
+            return barangTerbawah;
+        }else {
+            System.out.println("Tumpukan barang kosong");
+            return null;
+        }
+    }
 }
