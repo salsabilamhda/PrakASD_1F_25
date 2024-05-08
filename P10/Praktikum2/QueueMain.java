@@ -9,7 +9,6 @@ public class QueueMain {
         System.out.println("2. Antrian keluar");
         System.out.println("3. Cek Antrian terdepan");
         System.out.println("4. Cek Semua Antrian");
-        System.out.println("5. Cek Antrian Paling Belakang");
         System.out.println("-----------------------");
     }
 
