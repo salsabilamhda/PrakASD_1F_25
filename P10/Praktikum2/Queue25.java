@@ -40,6 +40,15 @@ public class Queue25 {
         }
     }
 
+    //MODIFIKASI PERTANYAAN 2
+    public void peekRear(){
+        if(!IsEmpty()){
+            System.out.println("Elemen terdepan : "+data[rear].norek+ " "+data[rear].nama+" "+data[rear].alamat+" "+data[rear].umur+" "+data[rear].saldo);
+        }else{
+            System.out.println("Queue masih kosong");
+        }
+    }
+
     public void print(){
         if(IsEmpty()){
             System.out.println("Queue masih kosong");
