@@ -72,4 +72,91 @@ public class SingleLinkedList25 {
             if(temp.next.next == null) tail=temp.next;
         }
     }
+
+    //MODIFIKASI ELEMEN
+    int getData(int index){
+        Node25 tmp = head;
+        for (int i=0; i<index; i++){
+            tmp =  tmp.next;
+        }
+        return tmp.data;
+    }
+
+    int indexOf(int key){
+        Node25 tmp = head;
+        int index = 0;
+        while (tmp != null && tmp.data != key) {
+            tmp = tmp.next;
+            index++;
+        }
+        if (tmp == null){
+            return -1;
+        }else{
+            return index;
+        }
+    }
+
+    void removeFirst(){
+        if(isEmpty()){
+            System.out.println("Linked List Masih Kosong,"
+                                + "tidak dapat dihaapus!");
+        }else if (head == tail){
+            head = tail = null;
+        }else{
+            head = head.next;
+        }
+    }
+
+    void removeLast() {
+        if (isEmpty()){
+            System.out.println("Linked List Masih kosong," 
+                            + "tidak dapat dihapus!");
+        }else if (head == tail){
+            head = tail = null;
+        }else{
+            Node25 temp = head;
+            while (temp.next.next != null){
+                temp = temp.next;
+            }
+            temp.next = null;
+            tail = temp.next;
+        }
+    }
+
+    void remove(int key){
+        if(isEmpty()){
+            System.out.println("Linked List Masih kosong,"
+                                + "tidak dapat dihapus!");
+        }else {
+            Node25 temp = head;
+            while (temp != null){
+                if((temp.data == key) && (temp == head)){
+                    removeFirst();
+                    break;
+                }else if (temp.next.data == key){
+                    temp.next = temp.next.next;
+                    if(temp.next == null){
+                        tail = temp;
+                    }
+                    break;
+                }
+                temp = temp.next;
+            }
+        }
+    }
+
+    public void removeAt(int index){
+        if(index == 0){
+            removeFirst();
+        }else{
+            Node25 temp = head;
+            for(int i=0; i < index-1; i++){
+                temp = temp.next;
+            }
+            temp.next = temp.next.next;
+            if (temp.next == null){
+                tail = temp;
+            }
+        }
+    }
 }
