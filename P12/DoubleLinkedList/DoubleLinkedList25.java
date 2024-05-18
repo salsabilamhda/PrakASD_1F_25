@@ -140,4 +140,33 @@ public class DoubleLinkedList25 {
             size--;
         }
     }
+
+    public int getFirst() throws Exception {
+        if(isEmpty()){
+            throw new Exception("Linked List Kosong");
+        }
+        return head.data;
+    }
+
+    public int getLast() throws Exception {
+        if(isEmpty()){
+            throw new Exception("Linked List Kosong");
+        }
+    Node25 tmp = head;
+        while (tmp.next != null){
+            tmp = tmp.next;
+        }
+        return tmp.data;
+    }
+
+    public int get(int index) throws Exception{
+        if(isEmpty() || index >= size){
+            throw new Exception ("nilai indeks diluar batas");
+        }
+        Node25 tmp = head;
+        for (int i =0; i<index; i++){
+            tmp = tmp.next;
+        }
+        return tmp.data;
+    }
 }
