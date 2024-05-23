@@ -6,6 +6,7 @@ public class Node25 {
     double rating;
 
     Node25 prev, next;
+    
 
     Node25(Node25 prev, int id, String judulFilm, double rating, Node25 next){
         this.prev = prev;
