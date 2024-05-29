@@ -211,4 +211,19 @@ public class BinaryTree25 {
             printLeaf(node.right);
         }
     }
+
+     //Tugas No 4
+    int jumlahLeft(){
+        return jumlahLeft(root);
+    }
+    int jumlahLeft(Node25 node){
+        if(node == null){
+            return 0;
+        }
+        if(node.left == null && node.right == null){
+            return 1;
+        }else{
+            return jumlahLeft(node.left)+jumlahLeft(node.right);
+        }
+    }
 }

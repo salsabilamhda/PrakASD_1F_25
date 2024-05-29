@@ -45,6 +45,8 @@ public class BinaryTreeMain25 {
         System.out.print("Data Yang Ada Di Leaf : ");
         bt.printLeaf(bt.root);
         System.out.println("");
+        System.out.print("Jumlah Leaf Yang Ada di Dalam Tree : ");
+        System.out.println(bt.jumlahLeft());
         System.out.println("");
         System.out.println("---------------------------------------------------");
         
