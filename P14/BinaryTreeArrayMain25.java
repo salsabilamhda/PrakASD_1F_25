@@ -9,5 +9,20 @@ public class BinaryTreeArrayMain25 {
         System.out.print("\nInOrder Traversal : ");
         bta.traverseInOrder(0);
         System.out.println("\n");
+
+        System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++");
+        System.out.println("                Output Tugas NO 5               ");
+        System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++");
+        bta.add(95);
+        bta.add(76);
+        System.out.println("------------------------------------------------");
+        System.out.print("Method traverse PreOrder  : ");
+        bta.traversePreOrder(0);
+        System.out.println();
+        System.out.println("------------------------------------------------");
+        System.out.print("Method traverse PostOrder : ");
+        bta.traversePostOrder(0);
+        System.out.println();
+        System.out.println("------------------------------------------------");
     }
 }
