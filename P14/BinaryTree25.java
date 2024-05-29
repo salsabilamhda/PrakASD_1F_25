@@ -166,8 +166,8 @@ public class BinaryTree25 {
             }
 
     //Tugas No 1
-    void addRekursif(int key){
-        root = addRekursif(root, key);
+    void addRekursif(int data){
+        root = addRekursif(root, data);
     }
 
     public Node25 addRekursif(Node25 current, int data){
