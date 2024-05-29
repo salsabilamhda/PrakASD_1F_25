@@ -31,6 +31,11 @@ public class BinaryTreeMain25 {
         System.out.print("PreOrder Traversal : ");
         bt.traversePreOrder(bt.root);
         System.out.println("");
+        System.out.println("");
+        System.out.print("Nilai Terbesar : ");
+        bt.NilaiTerbesar();
+        System.out.print("Nilai Terkecil : ");
+        bt.NilaiTerkecil();
     }
 }
 

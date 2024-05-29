@@ -183,4 +183,21 @@ public class BinaryTree25 {
         }
         return current;
     }
+
+    //Tugas No 2
+    void NilaiTerbesar(){
+        Node25 current = root;
+        while(current.right != null){
+            current = current.right;
+        }
+        System.out.println(current.data);
+    }
+    
+    void NilaiTerkecil(){
+        Node25 current = root;
+        while(current.left != null){
+            current = current.left;
+        }
+        System.out.println(current.data);
+    }
 }
