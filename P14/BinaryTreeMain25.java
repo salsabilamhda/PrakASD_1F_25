@@ -4,15 +4,16 @@ public class BinaryTreeMain25 {
     public static void main(String[] args) {
         BinaryTree25 bt = new BinaryTree25();
     
-        bt.add(6);
-        bt.add(4);
-        bt.add(8);
-        bt.add(3);
-        bt.add(5);
-        bt.add(7);
-        bt.add(9);
-        bt.add(10);
-        bt.add(15);
+        bt.addRekursif(6);
+        bt.addRekursif(4);
+        bt.addRekursif(8);
+        bt.addRekursif(3);
+        bt.addRekursif(5);
+        bt.addRekursif(7);
+        bt.addRekursif(9);
+        bt.addRekursif(10);
+        bt.addRekursif(15);
+        bt.addRekursif(50);
     
         System.out.print("PreOrder Traversal : ");
         bt.traversePreOrder(bt.root);

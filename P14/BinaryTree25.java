@@ -164,4 +164,23 @@ public class BinaryTree25 {
                 }
             }
             }
+
+    //Tugas No 1
+    void addRekursif(int key){
+        root = addRekursif(root, key);
+    }
+
+    public Node25 addRekursif(Node25 current, int data){
+        if (current == null){
+            return new Node25(data);
+        }
+        if (data < current.data){
+            current.left = addRekursif(current.left, data);
+        }else if(data > current.data){
+            current.right = addRekursif(current.right, data);
+        }else{
+            return current;
+        }
+        return current;
+    }
 }
