@@ -27,15 +27,27 @@ public class BinaryTreeMain25 {
         System.out.println("Find Node : "+bt.find(5));
         System.out.println("Delete Node 8 ");
         bt.delete(8);
+        System.out.println("---------------------------------------------------");
         System.out.println("");
         System.out.print("PreOrder Traversal : ");
         bt.traversePreOrder(bt.root);
         System.out.println("");
         System.out.println("");
+        System.out.println("---------------------------------------------------");
+        System.out.println("");
         System.out.print("Nilai Terbesar : ");
         bt.NilaiTerbesar();
         System.out.print("Nilai Terkecil : ");
         bt.NilaiTerkecil();
+        System.out.println("");
+        System.out.println("---------------------------------------------------");
+        System.out.println("");
+        System.out.print("Data Yang Ada Di Leaf : ");
+        bt.printLeaf(bt.root);
+        System.out.println("");
+        System.out.println("");
+        System.out.println("---------------------------------------------------");
+        
     }
 }
 
