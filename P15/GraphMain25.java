@@ -1,10 +1,22 @@
 package P15;
 
-import java.util.Scanner;
+//import java.util.Scanner;
 
 public class GraphMain25 {
     public static void main(String[] args) throws Exception {
-        Scanner sc25 = new Scanner(System.in);
+        GraphMatriks25 gdg = new GraphMatriks25(4);
+        gdg.makeEdge(0, 1, 50);
+        gdg.makeEdge(1, 0, 60);
+        gdg.makeEdge(1, 2, 70);
+        gdg.makeEdge(2, 1, 80);
+        gdg.makeEdge(2, 3, 40);
+        gdg.makeEdge(3, 0, 90);
+        gdg.printGraph();
+        System.out.println("Hasil setelah penghapusan edge");
+        gdg.removeEdge(2, 1);
+        gdg.printGraph();
+
+        /*Scanner sc25 = new Scanner(System.in);
         Graph25 gedung = new Graph25(6);
 
         gedung.addEdge(0, 1, 50);
@@ -46,6 +58,6 @@ public class GraphMain25 {
             }
         }
 
-        sc25.close();
+        sc25.close();*/
     }
 }
