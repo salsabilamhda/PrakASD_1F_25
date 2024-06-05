@@ -11,10 +11,16 @@ public class GraphMain25 {
         gdg.makeEdge(2, 1, 80);
         gdg.makeEdge(2, 3, 40);
         gdg.makeEdge(3, 0, 90);
+        for (int i = 0; i < 4; i++) { //modifikasi no 4 
+            gdg.degree(i);
+            System.out.println();
+        }
         gdg.printGraph();
+
         System.out.println("Hasil setelah penghapusan edge");
         gdg.removeEdge(2, 1);
         gdg.printGraph();
+
 
         /*Scanner sc25 = new Scanner(System.in);
         Graph25 gedung = new Graph25(6);
