@@ -67,7 +67,9 @@ public class DoubleLinkedList25 {
                     if (current.next != null){
                         current.next.prev = current.prev;
                     }
-                    break;
+                    //break;
+                    size--; //perbaikan kode 
+                    return; // perbaikan kode
 
                 }
                 current = current.next;
