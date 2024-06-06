@@ -91,4 +91,13 @@ public class Graph25 {
             }
             System.out.println("Edge tidak ditemukan!");
         }
+
+        //Latihan Praktikum No 3
+        public int hitungEdge() {
+            int count = 0;
+            for (int i = 0; i < vertex; i++) {
+                count += list[i].size();
+            }
+            return count;
+        }
 }

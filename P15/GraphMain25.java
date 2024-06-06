@@ -15,7 +15,8 @@ public class GraphMain25 {
             System.out.println("4. Print Graph");
             System.out.println("5. Check Edge");
             System.out.println("6. Update Jarak");
-            System.out.println("7. Exit"); //Latihan Praktikum 2
+            System.out.println("7. Hitung Egde"); //Latihan Praktikum 3
+            System.out.println("8. Exit");
             System.out.print("Choose an option: ");
             int pilihan = sc25.nextInt();
 
@@ -65,6 +66,9 @@ public class GraphMain25 {
                     gedung.updateJarak(asal, tujuan, jarakBaru);
                     break;
                 case 7:
+                    System.out.println("Jumlah edge dalam graf: " + gedung.hitungEdge());
+                    break;
+                case 8:
                     sc25.close();
                     return;
                 default:
