@@ -76,4 +76,16 @@ public class DoubleLinkedList25 {
             }
     }
 
+    //Latihan Praktikum No 2
+    public void updateJarak(int tujuan, int jarakBaru) {
+        Node25 current = head;
+        while (current != null) {
+            if (current.data == tujuan) {
+                current.jarak = jarakBaru;
+                return;
+            }
+            current = current.next;
+        }
+    }
+
 }

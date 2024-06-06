@@ -14,7 +14,8 @@ public class GraphMain25 {
             System.out.println("3. Degree");
             System.out.println("4. Print Graph");
             System.out.println("5. Check Edge");
-            System.out.println("6. Exit");
+            System.out.println("6. Update Jarak");
+            System.out.println("7. Exit"); //Latihan Praktikum 2
             System.out.print("Choose an option: ");
             int pilihan = sc25.nextInt();
 
@@ -55,10 +56,19 @@ public class GraphMain25 {
                     }
                     break;
                 case 6:
+                    System.out.print("Masukkan gedung asal: ");
+                    asal = sc25.nextInt();
+                    System.out.print("Masukkan gedung tujuan: ");
+                    tujuan = sc25.nextInt();
+                    System.out.print("Masukkan jarak baru: ");
+                    int jarakBaru = sc25.nextInt();
+                    gedung.updateJarak(asal, tujuan, jarakBaru);
+                    break;
+                case 7:
                     sc25.close();
                     return;
                 default:
-                System.out.println("Pilihan tidak valid. Silakan coba lagi.");
+                    System.out.println("Pilihan tidak valid. Silakan coba lagi.");
             }
         }
     }

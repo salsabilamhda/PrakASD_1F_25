@@ -79,4 +79,16 @@ public class Graph25 {
             }
             return false;
         }
+
+        //Latihan Praktikum No 2
+        public void updateJarak(int asal, int tujuan, int jarakBaru) throws Exception {
+            for (int i = 0; i < list[asal].size(); i++) {
+                if (list[asal].get(i) == tujuan) {
+                    list[asal].updateJarak(tujuan, jarakBaru);
+                    System.out.println("Jarak dari Gedung " + (char) ('A' + asal) + " ke Gedung " + (char) ('A' + tujuan) + " telah diubah menjadi " + jarakBaru + " m");
+                    return;
+                }
+            }
+            System.out.println("Edge tidak ditemukan!");
+        }
 }
